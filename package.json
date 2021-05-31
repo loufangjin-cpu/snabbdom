@@ -1,0 +1,20 @@
+{
+  "name": "snabbdom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "5",
+    "webpack-cli": "3",
+    "webpack-dev-server": "3"
+  },
+  "dependencies": {
+    "snabbdom": "^3.0.1"
+  }
+}
