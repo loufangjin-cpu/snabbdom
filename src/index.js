@@ -1,56 +1,22 @@
-import {
-  init,
-  classModule,
-  propsModule,
-  styleModule,
-  eventListenersModule,
-  h,
-} from "snabbdom";
+// diff 处理新旧节点不是同一个节点时
+import h from './mysnabbdom/h'
+import patch from './mysnabbdom/patch'
 
-const patch = init([
-  // Init patch function with chosen modules
-  classModule, // makes it easy to toggle classes
-  propsModule, // for setting properties on DOM elements
-  styleModule, // handles styling on elements with support for animations
-  eventListenersModule, // attaches event listeners
-]);
-
-const container = document.getElementById("container");
-const vnode1 = h('ul', {}, [
-  h('li', {}, 'A'),
-  h('li', {}, 'B'),
-  h('li', {}, 'C'),
-  h('li', {}, 'D')
-])
-patch(container, vnode1)
-
-const vnode2 = h('ul', {}, [
-  h('li', {}, 'A'),
-  h('li', {}, 'B'),
-  h('li', {}, 'C'),
-  h('li', {}, 'D'),
-  h('li', {}, 'E')
-])
-const vnode3 = h('ul', {}, [
-  h('li', {}, 'E'),
-  h('li', {}, 'A'),
-  h('li', {}, 'B'),
-  h('li', {}, 'C'),
-  h('li', {}, 'D')
-])
-const vnode4 = h('ul', {}, [
-  h('li', {key: 'E'}, 'E'),
-  h('li', {key: 'A'}, 'A'),
-  h('li', {key: 'B'}, 'B'),
-  h('li', {key: 'C'}, 'C'),
-  h('li', {key: 'D'}, 'D')
+const myVnode1 = h('ul', {}, [
+  h('li', {}, '牛奶'),
+  h('li', {}, '咖啡'),
+  h('li', {}, [h('div', {}, [h('p', {}, '可口可乐'), h('p', {}, '百事可乐')])]),
+  h('li', {}, h('p', {}, '雪碧'))
 ])
 
-// 点击按钮时，将vnode1变为vnode2
+const container = document.getElementById('container')
+patch(container, myVnode1)
+
 const btn = document.getElementById('btn')
+const myVnode2 = h('section', {}, [
+  h('h1', {}, '我是新的h1'),
+  h('h2', {}, '我是新的h2')
+])
 btn.onclick = function () {
-  patch(vnode1, vnode2)
+  patch(myVnode1, myVnode2)
 }
-
-// E的插入是全量更新还是局部更新
-// 如果没有key 值， 那么E在最后一位和第一位放置的时候是完全不同
