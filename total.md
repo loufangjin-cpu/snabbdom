@@ -18,3 +18,4 @@
   // 对比diff : https://juejin.cn/post/6919376064833667080#heading-9
 // 知乎： https://www.zhihu.com/search?type=content&q=vue3%20diff
 // 编译优化： https://blog.csdn.net/weixin_48726650/article/details/107019164
+// promise: https://tech.meituan.com/2014/06/05/promise-insight.html
