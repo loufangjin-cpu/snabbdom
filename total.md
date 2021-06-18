@@ -20,3 +20,7 @@
 // diff-update: https://juejin.cn/post/6962702898790662152
 // 编译优化： https://blog.csdn.net/weixin_48726650/article/details/107019164
 // promise: https://tech.meituan.com/2014/06/05/promise-insight.html
+// js常见算法： https://www.huaweicloud.com/articles/ea87be82e31ca5e6e5c0f1ee3a3d286f.html
+// 响应式： https://segmentfault.com/a/1190000023380448
+
+

@@ -20,3 +20,4 @@ const myVnode2 = h('section', {}, [
 btn.onclick = function () {
   patch(myVnode1, myVnode2)
 }
+
