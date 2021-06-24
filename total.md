@@ -13,7 +13,7 @@
   2、只有是同一个虚拟节点，才进行虚拟化比较，否则就是暴力删除旧的、插入新的。延伸问题：如何定义同一个虚拟节点？
   ### 答：选择器相同 且 key 相同
   3、只进行同层比较，不会进行跨层比较。即使是同一片虚拟节点，但是如果跨层了，那么 diff 算法也不会进行精细化比较。而是暴力删除旧的、然后插入新的
-
+ // https://co2-2020.github.io/blog/soundcode/vue/dom-diff.html#dom-diff%E6%A6%82%E8%BF%B0
   // vue3 diff: https://blog.csdn.net/webyouxuan/article/details/108505807
   // 对比diff : https://juejin.cn/post/6919376064833667080#heading-9
 // 知乎： https://www.zhihu.com/search?type=content&q=vue3%20diff
